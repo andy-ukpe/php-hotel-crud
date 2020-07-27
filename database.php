@@ -1,7 +1,7 @@
 <?php
   $servername = "localhost";
   $username = "root";
-  $password = "root";
+  $password = "roots";
   $dbname = "db hotel";
 
     // Connect
@@ -10,7 +10,7 @@
     // Check connection
     if ($conn && $conn->connect_error) {
       // se la connessione fallisce si mostra solo l'errore
-      die("Connection failed: " . $conn->connect_error;);
+      die("Connection failed: " . $conn->connect_error);
     }
 
     $sql = "SELECT * FROM `stanze`";
