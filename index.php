@@ -23,11 +23,15 @@
         </thead>
         <!-- singola stanza da stampare con il foreach -->
         <tbody>
-          <tr>
-            <th>1</th>
-            <th>1</th>
-            <th>1</th>
-          </tr>
+          <?php
+            foreach ($rooms as $room) { ?>
+              <tr>
+                <th><?php echo $room['id'] ?></th>
+                <th><?php echo $room['room number'] ?></th>
+                <th><?php echo $room['floor'] ?></th>
+              </tr>
+          <?php } ?>
+
         </tbody>
       </table>
 
