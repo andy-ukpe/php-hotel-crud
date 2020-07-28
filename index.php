@@ -1,16 +1,7 @@
 <!-- creo il index in cui inserisco l'header e un ciclo foreach per inserire i dati del database(richiamato con include)  -->
-<?php  ?>
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>hotel db</title>
-    <link rel="stylesheet" href="dist/app.css">
-  </head>
-  <body>
-    <header>
-      <h1>Andy Hotel </h1>
-    </header>
+<?php include __DIR__ . "/database.php"; ?>
+<?php include __DIR__ . "/partials/header.php"; ?>
+<?php include __DIR__ . '/env.php'; ?>
 
     <main>
       <table>
@@ -24,11 +15,12 @@
         <!-- singola stanza da stampare con il foreach -->
         <tbody>
           <?php
-            foreach ($rooms as $room) { ?>
+            foreach($rooms as $room) { ?>
               <tr>
                 <th><?php echo $room['id'] ?></th>
-                <th><?php echo $room['room number'] ?></th>
+                <th><?php echo $room['room_number'] ?></th>
                 <th><?php echo $room['floor'] ?></th>
+                <th> <a href="<?php echo $base_path . 'show/show.php?id=' . $room['id']; ?>">link</a> </th>
               </tr>
           <?php } ?>
 

@@ -1,9 +1,5 @@
 <?php
-  $servername = "localhost";
-  $username = "root";
-  $password = "root";
-  $dbname = "boolean-hotel";
-  $port = 8889;
+  include __DIR__ . '/env.php';
 
     // Connect
     $conn = new mysqli($servername, $username, $password, $dbname, $port);
@@ -18,18 +14,19 @@
     $result = $conn->query($sql);
     if ($result && $result->num_rows > 0) {
       // se ci sono i risultati faccio qualcosa, per farlo mi serve un array
-      $room= [];
+      $rooms= [];
 
       // output data of each row
       while($row = $result->fetch_assoc()) {
-      $room[] = $row;
+      $rooms[] = $row;
+      var_dump($rooms);
 
 
       }
-      
+
     } elseif ($result) {
       // la query funziona ma ci sono 0 risultati
-     die("0 results");
+       $rooms= [];
     } else {
       // se result è vera o qualcuno smonta il programma questo muore
     die("query error");
